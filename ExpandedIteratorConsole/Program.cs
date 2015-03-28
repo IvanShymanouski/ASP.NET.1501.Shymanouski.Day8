@@ -36,11 +36,14 @@ namespace ExpandedIterator
             collectQ.Enqueue(5.5);
             collectQ.Enqueue(6.8);
 
+            
+            
+
             foreach (var element in collectQ.GetExpandedIterator((x, y) => (x % 2 == 0) && (Math.Abs(y - (int)(y)) < 0.60001)))
             {
                 Console.WriteLine(element);
             }
-            
+
 
             Console.WriteLine("--ArrayList--");
             ArrayList arrayObj = new ArrayList();
