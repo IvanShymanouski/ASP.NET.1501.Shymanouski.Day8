@@ -10,6 +10,9 @@ namespace BinarySearchLibrary
     {
         public static int BinarySearch<T>(this T[] mas, T item, Func<T,T,int> comparer)
         {
+            if (object.Equals(comparer, null))
+                throw new ArgumentNullException("comparer must be not null");
+
             int left = 0;
             int right = mas.Length - 1;
             int middle = (right + left) / 2;
