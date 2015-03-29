@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomQueue
 {
-    public class GenericCustomQueue<T> //: IEnumerable<T>
+    public class GenericCustomQueue<T> : IEnumerable<T>
     {
         #region fields
         private class Queque
@@ -79,6 +80,11 @@ namespace CustomQueue
                 yield return temp.value;
                 temp = temp.next;
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
