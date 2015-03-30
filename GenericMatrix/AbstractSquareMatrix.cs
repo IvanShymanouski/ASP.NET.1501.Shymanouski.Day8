@@ -12,15 +12,15 @@ namespace GenericMatrix
     {
         public event MatrixEventHandler changed;
 
-        protected T[,] matrix;
+        protected T[] matrix;
 
-        public T this[int i, int j]
+        public virtual T this[int i, int j]
         {
             get
             {
                 if (i < Size && j < Size)
                 {
-                    return matrix[i, j];
+                    return getValue(i,j);
                 }
                 else
                 throw new IndexOutOfRangeException();
@@ -43,8 +43,9 @@ namespace GenericMatrix
         {
             changed += delegate(object o, int i, int j) { };
             Size = size;
-            matrix = new T[size, size];
         }
+
+        protected abstract T getValue(int i, int j);
 
         protected abstract void setValue(int i,int j,T value);
 

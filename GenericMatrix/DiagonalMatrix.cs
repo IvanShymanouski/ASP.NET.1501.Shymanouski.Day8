@@ -8,7 +8,16 @@ namespace GenericMatrix
 {
     public sealed class DiagonalMatrix<T> : AbstractSquareMatrix<T>
     {
-        public DiagonalMatrix(int size) : base(size) { }
+        public DiagonalMatrix(int size) : base(size) 
+        {
+            matrix = new T[size];
+        }
+
+        protected override T getValue(int i, int j)
+        {
+            if (i == j) return matrix[i];
+            else return default(T);
+        }
 
         protected override void setValue(int i, int j, T value)
         {
@@ -18,7 +27,7 @@ namespace GenericMatrix
             }
             else
             {
-                matrix[i, j] = value;
+                matrix[i] = value;
             }
         } 
     }

@@ -6,7 +6,7 @@ using BinarySearchLibrary;
 namespace BinarySearchLibrary.Tests
 {
     [TestClass]
-    public class BinarySearchClass
+    public class BinarySearchClassTests
     {
         [TestMethod]
         public void BinarySearchTest1()

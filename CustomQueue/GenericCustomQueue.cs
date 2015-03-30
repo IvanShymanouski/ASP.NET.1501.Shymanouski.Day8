@@ -88,3 +88,8 @@ namespace CustomQueue
         }
     }
 }
+
+
+0 1 2
+|   |
+f   l
