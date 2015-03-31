@@ -24,7 +24,6 @@ namespace MatrixUI
                 }
             sMatrix[3, 4] = "asdfasdf";
             #endregion
-
             SumMatrix(sMatrix, sMatrix, "--=Sum of sMatrix=--");
 
             Console.WriteLine();
@@ -43,6 +42,8 @@ namespace MatrixUI
                 }
             #endregion
 
+            ShowMatrix(symMatrix, "Symmetric matrix");
+            ShowMatrix(sMatrix, "Square matrix");
             SumMatrix(sMatrix, symMatrix, "--=Sum of sMatrix and symMatrix=--");
 
             Console.WriteLine();
@@ -117,13 +118,18 @@ namespace MatrixUI
         {
             AbstractMatrix<T> result = a.Sum(b);
 
+            ShowMatrix(result, message);
+        }
+
+        private static void ShowMatrix<T>(AbstractMatrix<T> a, string message)
+        {
             Console.WriteLine(message);
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < a.Size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < a.Size; j++)
                 {
-                    Console.Write(result[i, j] + "\t");
+                    Console.Write(a[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
