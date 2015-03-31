@@ -25,7 +25,7 @@ namespace GenericMatrix
             matrix[i * (i + 1) / 2 + j] = value;
         }
 
-        private static void Swap(ref int a, ref int b)
+        private void Swap(ref int a, ref int b)
         {
             a = a ^ b;
             b = a ^ b;

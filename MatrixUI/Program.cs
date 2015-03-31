@@ -63,16 +63,9 @@ namespace MatrixUI
 
 
             SumMatrix(symMatrix, dMatrix, "--=Sum of symMatrix and dMatrix=--");
-            #region exeptions
-            try
-            {
-                SumMatrix(dMatrix, symMatrix, "--=Sum of symMatrix and dMatrix=--"); //exeption
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            SumMatrix(dMatrix, symMatrix, "--=Sum of symMatrix and dMatrix=--"); 
 
+            #region exeptions
             try
             {
                 SumMatrix(sMatrix, dMatrix, "--=Sum of sMatrix and dMatrix=--"); //exeption
@@ -116,9 +109,7 @@ namespace MatrixUI
 
         private static void SumMatrix<T,U>(AbstractMatrix<T> a, AbstractMatrix<U> b, string message)
         {
-            AbstractMatrix<T> result = a.Sum(b);
-
-            ShowMatrix(result, message);
+            ShowMatrix(a.Sum(b), message);
         }
 
         private static void ShowMatrix<T>(AbstractMatrix<T> a, string message)
