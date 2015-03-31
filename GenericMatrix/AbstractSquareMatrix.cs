@@ -20,7 +20,7 @@ namespace GenericMatrix
             {
                 if (i < Size && j < Size)
                 {
-                    return getValue(i,j);
+                    return GetValue(i,j);
                 }
                 else
                 throw new IndexOutOfRangeException();
@@ -29,7 +29,7 @@ namespace GenericMatrix
             {
                 if (i < Size && j < Size)
                 {
-                    setValue(i, j,value);
+                    SetValue(i, j,value);
                     changed(this, i, j);
                 }
                 else
@@ -45,9 +45,9 @@ namespace GenericMatrix
             Size = size;
         }
 
-        protected abstract T getValue(int i, int j);
+        protected abstract T GetValue(int i, int j);
 
-        protected abstract void setValue(int i,int j,T value);
+        protected abstract void SetValue(int i,int j,T value);
 
     }
 }

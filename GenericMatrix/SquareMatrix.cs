@@ -14,12 +14,12 @@ namespace GenericMatrix
             matrix = new T[size * size];
         }
 
-        protected override T getValue(int i, int j)
+        protected override T GetValue(int i, int j)
         {
             return matrix[i + j * (Size - 1)];
         }
 
-        protected override void setValue(int i, int j, T value)
+        protected override void SetValue(int i, int j, T value)
         {
             matrix[i + j * (Size - 1)] = value;
         }

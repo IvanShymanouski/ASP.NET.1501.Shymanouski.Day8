@@ -13,13 +13,13 @@ namespace GenericMatrix
             matrix = new T[size];
         }
 
-        protected override T getValue(int i, int j)
+        protected override T GetValue(int i, int j)
         {
             if (i == j) return matrix[i];
             else return default(T);
         }
 
-        protected override void setValue(int i, int j, T value)
+        protected override void SetValue(int i, int j, T value)
         {
             if (i != j)
             {

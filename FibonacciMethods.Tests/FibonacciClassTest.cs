@@ -12,13 +12,13 @@ namespace FibonacciMethods.Tests
         public void FibonacciTest1()
         {
             CollectionAssert.AreEqual(FibonacciClass.Fibonacci(5).ToArray(), 
-                                      new Int64[] { 0, 1, 1, 2, 3 },"5");
+                                      new long[] { 0, 1, 1, 2, 3 },"5");
 
             CollectionAssert.AreEqual(FibonacciClass.Fibonacci(0).ToArray(),
-                                      new Int64[] { },"0");
+                                      new long[] { },"0");
 
             CollectionAssert.AreEqual(FibonacciClass.Fibonacci(10).ToArray(),
-                                      new Int64[] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 },"10");
+                                      new long[] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 },"10");
         }
 
         [TestMethod]

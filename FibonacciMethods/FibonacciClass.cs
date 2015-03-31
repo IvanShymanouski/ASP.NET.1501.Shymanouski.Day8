@@ -8,16 +8,15 @@ namespace FibonacciMethods
 {
     public static class FibonacciClass
     {
-        public static IEnumerable<Int64> Fibonacci(int count)
+        public static IEnumerable<long> Fibonacci(int count)
         {
-
             if (count < 0)
             {
                 throw new ArgumentException("should not be a negative number");
             }
 
-            Int64 f1=0;
-            Int64 f2=1;
+            long f1=0;
+            long f2=1;
             int number=1;
             bool overflow = false;
             
@@ -27,7 +26,7 @@ namespace FibonacciMethods
 
                 if (overflow) throw new OverflowException(string.Format("{0}", number));
                 
-                swap(ref f1, ref f2);
+                Swap(ref f1, ref f2);
 
                 try
                 {
@@ -41,7 +40,7 @@ namespace FibonacciMethods
             if (count>0) yield return f1;
         }
 
-        private static void swap(ref Int64 a, ref Int64 b)
+        private static void Swap(ref long a, ref long b)
         {
             a = a ^ b;
             b = a ^ b;

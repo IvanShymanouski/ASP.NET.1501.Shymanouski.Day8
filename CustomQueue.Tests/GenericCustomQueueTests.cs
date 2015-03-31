@@ -39,7 +39,6 @@ namespace CustomQueue.Tests
             Assert.AreEqual(q.Count, q1.Count);
         }
 
-
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
         public void DequeueExeptionTest()
