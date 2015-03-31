@@ -8,7 +8,7 @@ namespace GenericMatrix
 {
     public static class MatrixOperation
     {
-        public static SquareMatrix<T> Sum<T,U>(this AbstractSquareMatrix<T> a, AbstractSquareMatrix<U> b)
+        public static SquareMatrix<T> Sum<T,U>(this AbstractMatrix<T> a, AbstractMatrix<U> b)
         {
             if (a.Size != b.Size) throw new ArgumentException("Matrix must be same size");
             SquareMatrix<T> result = new SquareMatrix<T>(a.Size);

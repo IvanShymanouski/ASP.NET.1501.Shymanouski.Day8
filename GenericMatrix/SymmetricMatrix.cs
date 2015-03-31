@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GenericMatrix
 {
-    public sealed class SymmetricMatrix<T> : AbstractSquareMatrix<T>
+    public sealed class SymmetricMatrix<T> : AbstractMatrix<T>
     {
         public SymmetricMatrix(int size) : base(size) 
         {

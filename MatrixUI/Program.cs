@@ -16,7 +16,7 @@ namespace MatrixUI
 
             #region create and initialize sMatrix= SquareMatrix<object>
             SquareMatrix<object> sMatrix = new SquareMatrix<object>(size);
-            sMatrix.changed += (object o, int i, int j) => Console.WriteLine("a[" + i + "," + j + "] = " + ((AbstractSquareMatrix<object>)o)[i, j]);
+            sMatrix.changed += (object o, int i, int j) => Console.WriteLine("a[" + i + "," + j + "] = " + ((AbstractMatrix<object>)o)[i, j]);
             for (int i = 0; i < size; i++)
                 for (int j = 0; j < size; j++)
                 {
@@ -33,8 +33,8 @@ namespace MatrixUI
             SymmetricMatrix<string> symMatrix = new SymmetricMatrix<string>(size);
             symMatrix.changed += (object o, int i, int j) =>
             {
-                Console.WriteLine("a[" + i + "," + j + "] = " + ((AbstractSquareMatrix<string>)o)[i, j]);
-                if (i != j) Console.WriteLine("a[" + j + "," + i + "] = " + ((AbstractSquareMatrix<string>)o)[j, i]);
+                Console.WriteLine("a[" + i + "," + j + "] = " + ((AbstractMatrix<string>)o)[i, j]);
+                if (i != j) Console.WriteLine("a[" + j + "," + i + "] = " + ((AbstractMatrix<string>)o)[j, i]);
             };
             for (int i = 0; i < size; i++)
                 for (int j = 0; j <= i; j++)
@@ -51,8 +51,8 @@ namespace MatrixUI
             DiagonalMatrix<List<object>> dMatrix = new DiagonalMatrix<List<object>>(size);
             symMatrix.changed += (object o, int i, int j) =>
             {
-                Console.WriteLine("a[" + i + "," + j + "] = " + ((AbstractSquareMatrix<List<object>>)o)[i, j]);
-                if (i != j) Console.WriteLine("a[" + j + "," + i + "] = " + ((AbstractSquareMatrix<List<object>>)o)[j, i]);
+                Console.WriteLine("a[" + i + "," + j + "] = " + ((AbstractMatrix<List<object>>)o)[i, j]);
+                if (i != j) Console.WriteLine("a[" + j + "," + i + "] = " + ((AbstractMatrix<List<object>>)o)[j, i]);
             };
             for (int i = 0; i < size; i++)
             {
@@ -113,9 +113,9 @@ namespace MatrixUI
             }
         }
 
-        private static void SumMatrix<T,U>(AbstractSquareMatrix<T> a, AbstractSquareMatrix<U> b, string message)
+        private static void SumMatrix<T,U>(AbstractMatrix<T> a, AbstractMatrix<U> b, string message)
         {
-            AbstractSquareMatrix<T> result = a.Sum(b);
+            AbstractMatrix<T> result = a.Sum(b);
 
             Console.WriteLine(message);
 

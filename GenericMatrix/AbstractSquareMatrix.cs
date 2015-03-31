@@ -8,7 +8,7 @@ namespace GenericMatrix
 {
     public delegate void MatrixEventHandler(object o, int i, int j);
 
-    abstract public class AbstractSquareMatrix<T>
+    abstract public class AbstractMatrix<T>
     {
         public event MatrixEventHandler changed;
 
@@ -39,7 +39,7 @@ namespace GenericMatrix
     
         public int Size { get; protected set; }
 
-        public AbstractSquareMatrix(int size)
+        public AbstractMatrix(int size)
         {
             changed += delegate(object o, int i, int j) { };
             Size = size;
